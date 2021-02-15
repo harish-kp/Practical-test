@@ -4,7 +4,7 @@
 Task 1 aims to rotate the Husky UGV in clockwise and anticlockwise directions for 10 seconds. The second portion of the task aims to daemonize the task to be executed in the background without any interference from the terminal.
   
 Completed portion: 
-I have written python code to rotate the Husky UGV for 10 seconds in anticlockwise direction. In order to execute the code create a package named "practice-test" and clone the repository's contents into the package. "task1.py" file in the repository corresponds to this task.
+I have written python code to rotate the Husky UGV for 10 seconds in anticlockwise direction. In order to execute the code create a package named "Practical-test" and clone the repository's contents into the package. "task1.py" file in the repository corresponds to this task.
   
 To execute the program, 
 In 3 different terminals,  
