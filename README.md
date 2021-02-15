@@ -7,12 +7,12 @@ Completed portion:
 I have written python code to rotate the Husky UGV for 10 seconds in anticlockwise direction. In order to execute the code create a package named "practice-test" and clone the repository's contents into the package. "task1.py" file in the repository corresponds to this task.
   
 To execute the program, 
-In 3 different terminals,
-    Execute `roscore`
-    Eexecute `roslaunch husky_gazebo husky_empty_world.launch`
-    Get to the directory of the 'task1.py', excute `python task1.py`
-    The file has already been daemonized, it'll right away exit to default terminal.
-To review that the process was executed in the background, kindly use \textit{ps -axl}, where you can lookup that \verbose{roslaunch husky\_gazebo husky\_empty\_world.launch} being executed for about 12 seconds.  
+In 3 different terminals,  
+    Execute `roscore`  
+    Eexecute `roslaunch husky_gazebo husky_empty_world.launch`  
+    Get to the directory of the 'task1.py', excute `python task1.py`  
+    The file has already been daemonized, it'll right away exit to default terminal.  
+To review that the process was executed in the background, kindly use `ps -axl`, where you can lookup that \verbose{roslaunch husky\_gazebo husky\_empty\_world.launch} being executed for about 12 seconds.  
 Linux's "man daemon" came in handy to understand what and necessity of services in linux.  
 In progress: 
 
