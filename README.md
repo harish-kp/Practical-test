@@ -14,6 +14,7 @@ In 3 different terminals,
     The file has already been daemonized, it'll right away exit to default terminal.  
 To review that the process was executed in the background, kindly use `ps -axl`, where you can lookup that \verbose{roslaunch husky\_gazebo husky\_empty\_world.launch} being executed for about 12 seconds.  
 Linux's "man daemon" came in handy to understand what and necessity of services in linux.  
+
 In progress: 
 
 I am continuing to develop the code of the same using c++ and create a linux service for it.  
@@ -25,6 +26,7 @@ Task 2 aims to read goal from a csv file and write the poses traced by the robot
 Completed portion:
 Development of python code to move to a goal and avoid obstacles as it reaches it.
   
-In progress:
+In progress:  
+
 Fine tuning of controller to trace the path as Proportional controller is too aggressive as the goal reaching probability is about 60\%
 Developing python and C++ code to read and write to csv file and make the robot to trace the path from the csv file.
