@@ -7,7 +7,6 @@ from time import sleep
 
 def huskyOdomCallback(message,cargs):
     # Implementation of proportional position control 
-    # For comparison to Simulink implementation
 
     # Callback arguments 
     
@@ -49,8 +48,7 @@ def huskyOdomCallback(message,cargs):
     else:
         v=0
         w=0
-        print ('Goal reached')
-    #w = -0.75    
+        print ('Goal reached')  
     # Publish   
     msg.linear.x = v
     msg.angular.z = w
@@ -65,8 +63,6 @@ def laserCallback(msg):
                  (cmdpub,dist_obstacle,cmdmsg,goal))
 
 
-########################################
-# Main Script
 # Initialize our node
 rospy.init_node('navigation_husky',anonymous=True)
 dist_obstacle = 0    
@@ -77,11 +73,4 @@ goal = [1,0]  # Goal
 cmdmsg = geometry_msgs.msg.Twist()
 cmdpub = rospy.Publisher('/cmd_vel',geometry_msgs.msg.Twist, queue_size=10)
 rospy.Subscriber('/scan',sensor_msgs.msg.LaserScan, laserCallback)
-# print dist_obstacle
-# Setup subscription - which implemets our controller.
-# We pass the publisher, the message to publish and the goal as 
-# additional parameters to the callback function.
-
-
-# spin() simply keeps python from exiting until this node is stopped
 rospy.spin()
