@@ -4,6 +4,7 @@ import rospy, tf
 import geometry_msgs.msg, nav_msgs.msg
 from math import *
 from time import sleep
+from createDaemon import createDaemon
 def huskyOdomCallback(message,cargs):
 
     # Callback arguments 
@@ -24,6 +25,7 @@ def callback(event):
     rospy.signal_shutdown("Rotated 10 secs")  
     
 call = 0  
+createDaemon()
 rospy.init_node('navigation_husky',anonymous=True)
 if call == 0:
     rospy.Timer(rospy.Duration(10), callback)
