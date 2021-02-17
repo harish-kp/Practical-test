@@ -15,7 +15,7 @@ In 3 different terminals,
     Execute `roscore`  
     Execute `roslaunch husky_gazebo husky_empty_world.launch`  
     Execute `rosrun practice_test task1.py` from `~/catkin_ws`  to run the python file (anticlockwise rotation)  
-    Execute `rosrun practice_test task` from `~/catkin_ws` to execute the c++ (clockwise rotation)
+    Execute `rosrun practice_test task` from `~/catkin_ws` to execute the c++ (clockwise rotation)  
     The file has already been daemonized, it'll right away exit to default terminal.  
 To review that the process was executed in the background, kindly use `ps -axl`, where you can lookup that \verbose{roslaunch husky\_gazebo husky\_empty\_world.launch} being executed for about 10 seconds and 12 seconds repectively.  
 Linux's "man daemon" came in handy to understand what and necessity of services in linux.    
