@@ -1,7 +1,7 @@
 # Practical-test
-Status : In Development 
-Completed : Task 1
-In progress : Task 2
+Status : In Development   
+Completed : Task 1  
+In progress : Task 2  
 Last update date : 17 February 2021
 # Task 1
 
