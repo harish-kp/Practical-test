@@ -499,30 +499,30 @@ if __name__ == "__main__":
 
     global scanMessageQueue
     scanMessageQueue = Queue.Queue()
-    while not rospy.is_shutdown():
-        #Subscribe to map updates
-        map_sub = rospy.Subscriber('/map', OccupancyGrid, mapCallback, queue_size=1)
-        scan_sub = rospy.Subscriber('/scan', LaserScan, scanCallback, queue_size=1)
-        # costmap_sub = rospy.Subscriber('/move_base/local_costmap/costmap', OccupancyGrid, costmapCallback, queue_size=1)
-        #Start requesting position in background
-        Thread(target=request_pos_at_rate, name="Request_pos_at_rate Thread", args=[POS_REQUEST_RATE]).start()
-        Thread(target=scanProcessing, name="Request_pos_at_rate Thread").start()
 
-        print "Waiting for the initial position from tf...",
+    #Subscribe to map updates
+    map_sub = rospy.Subscriber('/map', OccupancyGrid, mapCallback, queue_size=1)
+    scan_sub = rospy.Subscriber('/scan', LaserScan, scanCallback, queue_size=1)
+    # costmap_sub = rospy.Subscriber('/move_base/local_costmap/costmap', OccupancyGrid, costmapCallback, queue_size=1)
+    #Start requesting position in background
+    Thread(target=request_pos_at_rate, name="Request_pos_at_rate Thread", args=[POS_REQUEST_RATE]).start()
+    Thread(target=scanProcessing, name="Request_pos_at_rate Thread").start()
 
-        while not receivedInitPos or not receivedNewMap or not receivedNewCostMap:
-            rospy.sleep(.1)
-            pass
+    print "Waiting for the initial position from tf...",
 
-        print "DONE"
+    while not receivedInitPos or not receivedNewMap or not receivedNewCostMap:
+        rospy.sleep(.1)
+        pass
 
-        print "Started exploration."
+    print "DONE"
 
-        control = RobotControl(rospy.Publisher('/cmd_vel', Twist, queue_size=5), POS_REQUEST_RATE, ROTATE_AROUND_GRANULARITY, ANGLE_TOLERANCE, POS_TOLERANCE)
-        # exploreEnvironment()
-        control.goToPosition(LINEAR_VELOCITY, -1, 1)
-        print "Done with exploration. Exiting...",
-        exit = True
-        print "DONE"
+    print "Started exploration."
+
+    control = RobotControl(rospy.Publisher('/cmd_vel', Twist, queue_size=5), POS_REQUEST_RATE, ROTATE_AROUND_GRANULARITY, ANGLE_TOLERANCE, POS_TOLERANCE)
+    # exploreEnvironment()
+    control.goToPosition(LINEAR_VELOCITY, -1, 1)
+    print "Done with exploration. Exiting...",
+    exit = True
+    print "DONE"
 
 
