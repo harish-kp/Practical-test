@@ -2,8 +2,8 @@
 Status : In Development   
 Completed : Task 1  
 In progress : Task 2  
-Last update date : 20 February 2021
-Requirements : Ubuntu 18.04, ROS Melodic
+Last update date : 20 February 2021  
+Requirements : Ubuntu 18.04, ROS Melodic  
 Language : C++, Python
 # Task 1
 
