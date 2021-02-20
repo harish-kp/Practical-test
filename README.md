@@ -44,7 +44,7 @@ In progress:
 Developing C++ code to read and write to csv file and make the robot to trace the path from the csv file.
   
 # References and Useful links  
-[ROS Melodic Installation](http://wiki.ros.org/melodic/Installation)
-[ROS Tutorials](http://wiki.ros.org/ROS/Tutorials)
-[ROS Husky Tutorials](http://wiki.ros.org/Robots/Husky)
-[Clearpath Robotics Husky Datasheet](https://www.clearpathrobotics.com/wp-content/uploads/2013/02/HUSKY_A200_UGV_2013_TEASER_email.pdf)
+[ROS Melodic Installation](http://wiki.ros.org/melodic/Installation)  
+[ROS Tutorials](http://wiki.ros.org/ROS/Tutorials)  
+[ROS Husky Tutorials](http://wiki.ros.org/Robots/Husky)  
+[Clearpath Robotics Husky Datasheet](https://www.clearpathrobotics.com/wp-content/uploads/2013/02/HUSKY_A200_UGV_2013_TEASER_email.pdf)  
