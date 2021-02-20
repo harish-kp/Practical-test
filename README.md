@@ -2,7 +2,9 @@
 Status : In Development   
 Completed : Task 1  
 In progress : Task 2  
-Last update date : 17 February 2021
+Last update date : 20 February 2021
+Requirements : Ubuntu 18.04, ROS Melodic
+Language : C++, Python
 # Task 1
 
 Task 1 aims to rotate the Husky UGV in clockwise and anticlockwise directions for 10 seconds. The second portion of the task aims to daemonize the task to be executed in the background without any interference from the terminal.
@@ -20,14 +22,29 @@ In 3 different terminals,
 To review that the process was executed in the background, kindly use `ps -axl`, where you can lookup that \verbose{roslaunch husky\_gazebo husky\_empty\_world.launch} being executed for about 10 seconds and 12 seconds repectively.  
 Linux's "man daemon" came in handy to understand what and necessity of services in linux.    
 
-# Task 2
+# Task 2 
 
-Task 2 aims to read goal from a csv file and write the poses traced by the robot back to the same csv file.
-  
-Completed portion:
-Development of python code to move to a goal and avoid obstacles as it reaches it.
-  
-In progress:  
+Task 2 aims to read goal from a csv file and write the poses traced by the robot back to the same csv file.  
+Completed portion:  
+Development of python code to move to a goal and avoid obstacles as it reaches it. With some digging into my earlier ROS project notes, I was able to recreate and modify it for Husky and made it to map and navigate to any given goal avoiding obstacles. Kindly ensure that the files in the repository are placed as is in the newly created package practice_test.  
+To execute the program,   
+In different terminals,  
+Execute `roscore`  
+Execute `roslaunch husky_gazebo husky_playpen.launch`  
+Execute `roslaunch husky_navigation exploration_demo.launch`  
+Execute `rosrun practice_test task2_mapping.py`  
+Execute `rosrun practice_test task2_control.py`  
+Execute `rostopic echo imu/data -b ~/Desktop/task2.bag -p > ~/Desktop/task2.csv`  
+Kindly open `task2_control.py` to change the navigation goal in line 523 in second and third arguments of the function control.goToPosition() representing x and y coordinates of the goal point respectively.  
+The Husky can be allowed to freely explore the environment by uncommenting line 522 and then go to any goal point.  
+The mapping of the environment invokes two services named `Centroid.srv` and `Trajectory.srv`. The launch file `exploration_demo.launch` invokes two important topics `base_link` and `map` which are necessary for mapping and keeping track of the robot relative to world frame.
+ROSbag is convenient way to echo topics and replay them to move the robot in the same path along with CSV for data analytics.  
 
-Fine tuning of controller to trace the path as Proportional controller is too aggressive as the goal reaching probability is about 60\%
-Developing python and C++ code to read and write to csv file and make the robot to trace the path from the csv file.
+In progress:
+Developing C++ code to read and write to csv file and make the robot to trace the path from the csv file.
+  
+# References and Useful links  
+[ROS Melodic Installation](http://wiki.ros.org/melodic/Installation)
+[ROS Tutorials](http://wiki.ros.org/ROS/Tutorials)
+[ROS Husky Tutorials](http://wiki.ros.org/Robots/Husky)
+[Clearpath Robotics Husky Datasheet](https://www.clearpathrobotics.com/wp-content/uploads/2013/02/HUSKY_A200_UGV_2013_TEASER_email.pdf)

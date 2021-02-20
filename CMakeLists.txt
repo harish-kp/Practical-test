@@ -58,6 +58,8 @@ add_message_files(
 add_service_files(
   FILES
   # AddTwoInts.srv
+  Trajectory.srv 
+  Centroid.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -72,6 +74,7 @@ generate_messages(
   DEPENDENCIES
   nav_msgs
   std_msgs
+  geometry_msgs
 )
 
 ################################################
