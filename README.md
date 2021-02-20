@@ -48,3 +48,6 @@ Developing C++ code to read and write to csv file and make the robot to trace th
 [ROS Tutorials](http://wiki.ros.org/ROS/Tutorials)  
 [ROS Husky Tutorials](http://wiki.ros.org/Robots/Husky)  
 [Clearpath Robotics Husky Datasheet](https://www.clearpathrobotics.com/wp-content/uploads/2013/02/HUSKY_A200_UGV_2013_TEASER_email.pdf)  
+R Siegwart, I R Nourbaksh,Introduction to Autonomous Mobile Robots, MIT Press, 2004.  
+R Hartley, A Zisserman, Multiple View Geometry in Computer Vision, Second ed. Cambridge University Press, 2004.  
+R. Szeliski, Computer Vision: Algorithms and Applications. 2010.  
