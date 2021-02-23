@@ -35,13 +35,22 @@ Execute `roslaunch husky_navigation exploration_demo.launch`
 Execute `rosrun practice_test task2_mapping.py`  
 Execute `rosrun practice_test task2_control.py`  
 Execute `rostopic echo imu/data -b ~/Desktop/task2.bag -p > ~/Desktop/task2.csv`  
+In order to view the robot in simulation environment with intricate details about the pose and location of the obstacles,  
+Execute `roslaunch husky_viz view_robot.launch`  
 Kindly open `task2_control.py` to change the navigation goal in line 523 in second and third arguments of the function control.goToPosition() representing x and y coordinates of the goal point respectively.  
 The Husky can be allowed to freely explore the environment by uncommenting line 522 and then go to any goal point.  
 The mapping of the environment invokes two services named `Centroid.srv` and `Trajectory.srv`. The launch file `exploration_demo.launch` invokes two important topics `base_link` and `map` which are necessary for mapping and keeping track of the robot relative to world frame.
-ROSbag is convenient way to echo topics and replay them to move the robot in the same path along with CSV for data analytics.  
-
-In progress:
-Developing C++ code to read and write to csv file and make the robot to trace the path from the csv file.
+ROSbag is convenient way to echo topics and replay them to move the robot in the same path along with CSV for data analytics.    
+C++ code execution:  
+In `task2.cpp`, one can alter the goal that is to be navigated in `goalNav::getGoals()` function. If the spawn location is changed from default values, please give in the spawn location in `goalNav::goalNav(ros::NodeHandle nh)` function. Upon executing `catkin_make`, executable named `tasktwo` is created and compiles the code.  
+To execute the program,     
+In different terminals,  
+Execute `roslaunch husky_gazebo husky_playpen.launch`  
+Execute `roslaunch husky_navigation exploration_demo.launch`  
+Execute `rosrun practice_test tasktwo`  
+Execute `rostopic echo imu/data -b ~/Desktop/tasktwo.bag -p > ~/Desktop/tasktwo.csv` 
+In order to view the robot in simulation environment with intricate details about the pose and location of the obstacles,  
+Execute `roslaunch husky_viz view_robot.launch`  
   
 # References and Useful links  
 [ROS Melodic Installation](http://wiki.ros.org/melodic/Installation)  

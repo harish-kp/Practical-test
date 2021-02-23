@@ -7,13 +7,7 @@ add_compile_options(-std=c++11)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS
-  nav_msgs
-  roscpp
-  rospy
-  std_msgs
-  message_generation
-)
+find_package(catkin REQUIRED COMPONENTS roscpp rospy tf nav_msgs std_msgs message_generation genmsg)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -128,7 +122,8 @@ include_directories(include
 add_executable(task src/task1.cpp)
 target_link_libraries(task ${catkin_LIBRARIES})
 add_dependencies(task practice_test_generate_messages_cpp)
-
+add_executable(tasktwo src/task2.cpp)
+target_link_libraries(tasktwo ${catkin_LIBRARIES})
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/practice_test.cpp
