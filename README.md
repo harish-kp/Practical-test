@@ -1,8 +1,7 @@
 # Practical-test
-Status : In Development   
-Completed : Task 1  
-In progress : Task 2  
-Last update date : 20 February 2021  
+Status : Developed / Looking for improvement opportunites   
+Completed : Task 1, Task 2 
+Last update date : 24 February 2021  
 Requirements : Ubuntu 18.04, ROS Melodic  
 Language : C++, Python
 # Task 1
@@ -48,7 +47,7 @@ In different terminals,
 Execute `roslaunch husky_gazebo husky_playpen.launch`  
 Execute `roslaunch husky_navigation exploration_demo.launch`  
 Execute `rosrun practice_test tasktwo`  
-Execute `rostopic echo imu/data -b ~/Desktop/tasktwo.bag -p > ~/Desktop/tasktwo.csv` 
+Execute `rostopic echo imu/data -b ~/Desktop/tasktwo.bag -p > ~/Desktop/tasktwo.csv`  
 In order to view the robot in simulation environment with intricate details about the pose and location of the obstacles,  
 Execute `roslaunch husky_viz view_robot.launch`  
   
