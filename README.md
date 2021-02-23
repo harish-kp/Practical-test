@@ -1,7 +1,7 @@
 # Practical-test
 Status : Developed / Looking for improvement opportunites   
-Completed : Task 1, Task 2 
-Last update date : 24 February 2021  
+Completed : Task 1, Task 2  
+Last update date : 24 February 2021    
 Requirements : Ubuntu 18.04, ROS Melodic  
 Language : C++, Python
 # Task 1
