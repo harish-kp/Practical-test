@@ -75,14 +75,11 @@ void goalNav::run(int status)
   
   if (status == 3 && goal_count == 0) { // this is the first stage 
     
-    // still in the first stage but already in some position from previous action
     goal_reached = false;
     callActionServer(goal);
     goal_count = goal_count + 2;
-        ROS_INFO("Moving to goal");
-    // goal_count = goal_count + 1;
+    ROS_INFO("Moving to goal");
     operation_started = false;
-    // ROS_INFO("total distance traveled : %f",dist);
   } 
   if (status == 3){
       ros::shutdown();
@@ -98,21 +95,17 @@ void goalNav::run(int status)
 int goalNav::check_status(int status)
 {
   goal_status = status;
-  // ROS_INFO("goal_status %i",goal_status);
   if (goal_status == 1) {
-    // ROS_INFO("goal_sended ");
     goal_sended = true;
     goal_reached = false;
   }
   if (goal_status == 3)
   {
-    // ROS_INFO("goal reached");
     goal_reached = true;
     goal_sended = false;
   }
   run(goal_status);
   return goal_status;
-  // check the current status
 
 }
 double goalNav::get_start_time(double start_time)
@@ -179,12 +172,12 @@ double start_time , finish_time;
 if (goal_count == 1)
 		{
 			// status is not clear, no goal is sended yet!
-			start_time = msg->header.stamp.toSec(); // get the time from message
+			start_time = msg->header.stamp.toSec();
       get_start_time(start_time);
 		}
 if ( goal_count == 2)
     {
-      finish_time = msg->header.stamp.toSec(); // get the time from message
+      finish_time = msg->header.stamp.toSec(); 
       get_end_time(finish_time);
       double total_time = abs(real_start_time - real_end_time);
       ROS_INFO("total time = %f",total_time);
@@ -209,7 +202,7 @@ void goalNav::setGoals(Pose final_pose)
 {
   geometry_msgs::PoseStamped target_pose;
 
-  //we'll send a goal to the robot to move 1 meter forward
+  //we'll send a goal to the robot 
   goal.target_pose.header.frame_id = final_pose.frame;
   goal.target_pose.header.stamp = ros::Time::now();
 
@@ -244,8 +237,6 @@ int main(int argc, char** argv){
     ros::spin();
 
     return 0;
-
-  //wait for the action server to come up
 
 }
 
